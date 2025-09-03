@@ -1,0 +1,135 @@
+1."'"ls"'"      /+
+
+2.$'PWD'   /+
+/Users/sabderra/Desktop/mini/parsing  /+
+
+3.s_bash$ cat << """"ll
+
+echo $'USER' /+
+echo $"USER" /+
+
+
+ls | echo "hello" >> ff  /+
+
+
+Case	Typical exit status
+A command runs successfully	0
+Command not found (execve fail)	127
+Command found, but error occurs	1, 126, 2, etc.
+Builtin fails (e.g. cd bad path)	1 or custom
+Syntax error	2 or 258
+Exit builtin (exit 42)	42 (or user-given)
+
+cntrl c 130
+
+
+
+
+| Exit Code | Meaning                              | When to Use in Minishell                |
+| --------- | ------------------------------------ | --------------------------------------- |
+| `0`       | Success                              | After a successful builtin or execve    |
+| `1`       | General error                        | File exists, wrong permissions, etc.    |
+| `258`       | Incorrect usage / syntax error       | Wrong args to builtin, parsing failure  |
+| `126`     | Command found but not executable     | File exists but no `+x` permission      |
+| `127`     | Command not found                    | `execve()` fails with `ENOENT`          |
+| `130`     | Script terminated by Ctrl+C (SIGINT) | When signal 2 (optional bonus handling) |
+| 255       | Exit with non nimirik ra9m          |
+
+export a="ls -la" // ((ask for it waeil !!)(
+{{
+
+COMMAND 1:
+  ARG[0]: export
+  ARG[1]: a=ls -la
+s_bash$ $a
+COMMAND 1:
+  ARG[0]: 
+}{
+
+ls >a >l >p -la | << op >> o   /+
+
+s_bash$ >| | 
+bash: syntax error near unexpected token   /+
+
+cat *
+
+'""'''$USER'' //this still not work  /+
+'''"""ls"''""'    /+
+'""ls""'""    /+
+
+
+export t="ls -la"
+$t
+
+and "$t" '$t'
+
+expand char *input if in the value of $t we have space like [ls -la] so after we can split ls and -la everthing on spereat node
+
+ls > $USE
+          (if this key not exist we will give error);
+
+ok
+
+
+my delimiter expand but is should not expand (in first expand)
+             >> $USER
+
+
+cat << hh ""
+
+
+
+
+ls > out
+COMMAND 1:
+  ARG[0]: ls
+  OUTPUT: out (expand: 31262
+
+
+
+  we expand two times cuz about this case 
+  echo $'USER'
+
+  we have problem in this case
+  $"US'E'R"
+
+
+
+  minishell$ $PATH
+COMMAND 1:
+  ARG[0]: /home/abdo/.vscode-server/bin/488a1f239235055e34e673291fb8d8c810886f81/bin/remote-cli:/home/abdo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program
+  ARG[1]: Files
+  ARG[2]: (x86)/Common
+  ARG[3]: Files/Intel/Shared
+  ARG[4]: Libraries/redist/intel64/compiler:/mnt/c/Program
+  ARG[5]: Files
+  ARG[6]: (x86)/Common
+  ARG[7]: Files/Intel/Shared
+  ARG[8]: Libraries/redist/ia32/compiler:/mnt/c/Program
+  ARG[9]: Files
+  ARG[10]: (x86)/Common
+  ARG[11]: Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program
+  ARG[12]: Files/Git/cmd:/mnt/c/Users/AbdoSkh/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/AbdoSkh/AppData/Local/Programs/Microsoft
+  ARG[13]: VS
+  ARG[14]: Code/bin:/snap/bin:/home/abdo/.local/bin:/home/abdo/.local/bin:/home/abdo/.local/bin
+
+
+  echo -e "ls\nexit" | valgrind --leak-check=full \
+                              --show-leak-kinds=all \
+                              --track-origins=yes \
+                              ./minishell
+
+
+valgrind --leak-check=full ./minishel
+
+
+ls | grep execution/
+
+
+//-----------------//errors://-----------------//
+
+
+echo "$USER"
+exit
+oo
+export ll
