@@ -51,18 +51,22 @@ static void	heredoc_write_line(char *line, t_command *cmd,
 static void	heredoc_loop(t_command *cmd, char *name, t_env *env_list)
 {
 	char	*line;
+	char	*line_without_quotes;
 
 	while (1)
 	{
 		line = readline("> ");
 		if (!line)
 			break ;
-		if (!ft_check_strcmp(line, name))
+		line_without_quotes = remove_quotes(line);
+		if (!ft_check_strcmp(line_without_quotes, name))
 		{
 			free(line);
+			free(line_without_quotes);
 			line = NULL;
 			break ;
 		}
+		free(line_without_quotes);
 		heredoc_write_line(line, cmd, env_list);
 		free(line);
 	}

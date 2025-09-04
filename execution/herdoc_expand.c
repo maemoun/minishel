@@ -1,39 +1,5 @@
 #include ".././parsing/main.h"
 
-// char	*expand_variable_name_herdoc(const char *input,
-// 				t_fir_expand_elements *st)
-// {
-// 	size_t	start;
-// 	char	*var_name;
-// 	char	*val;
-
-// 	st->i++;
-// 	if (input[st->i] == '{')
-// 	{
-// 		st->i++;
-// 		start = st->i;
-// 		while (ft_is_valid_var_char(input[st->i]))
-// 			st->i++;
-// 		var_name = ft_strndup(&input[start], st->i - start);
-// 		val = first_get_env_value(var_name, st->env);
-// 		if (val)
-// 			st->result = ft_strjoin(st->result, val);
-// 		free(var_name);
-// 		if (input[st->i] == '}')
-// 			st->i++;
-// 		return (st->result);
-// 	}
-// 	start = st->i;
-// 	while (ft_is_valid_var_char(input[st->i]))
-// 		st->i++;
-// 	var_name = ft_strndup(&input[start], st->i - start);
-// 	val = first_get_env_value(var_name, st->env);
-// 	if (val)
-// 		st->result = ft_strjoin(st->result, val);
-// 	free(var_name);
-// 	return (st->result);
-// }
-
 static char	*expand_with_braces(const char *input, t_fir_expand_elements *st)
 {
 	size_t	start;
