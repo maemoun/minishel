@@ -60,6 +60,25 @@ char	*first_expand_variable(const char *input, t_env *env,
 	st.result = ft_strndup("", 0);
 	while (input[st.i])
 	{
+		if (input[st.i] == '<' && input[st.i + 1] == '<')
+		{
+			st.result = expand_char_literal(&st, input[st.i]);
+			st.i++;
+			st.result = expand_char_literal(&st, input[st.i]);
+			st.i++;
+			while (input[st.i] && input[st.i] == ' ')
+			{
+				st.result = expand_char_literal(&st, input[st.i]);
+				st.i++;
+			}
+			while (input[st.i] && input[st.i] != ' ' && input[st.i] != '<'
+				&& input[st.i] != '>' && input[st.i] != '|')
+			{
+				st.result = expand_char_literal(&st, input[st.i]);
+				st.i++;
+			}
+			continue;
+		}
 		if (input[st.i] == '\\' && input[st.i + 1] == '$' && !st.in_single)
 			handle_escaped_dollar(input, &st);
 		else if ((input[st.i] == '\'' && !st.in_double)
@@ -69,6 +88,7 @@ char	*first_expand_variable(const char *input, t_env *env,
 			handle_variable(input, &st);
 		else
 			handle_plain_char(input, &st);
-	}
+
+    }
 	return (st.result);
 }
